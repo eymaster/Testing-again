@@ -3,26 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Game</title>
+    <title>Employee Scheduling</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>Move the Red Square!</h1>
-        <p>Use the arrow keys to move the square and avoid obstacles.</p>
+        <h1>Employee Schedule Management</h1>
     </header>
 
     <main>
-        <canvas id="gameCanvas"></canvas>
-        <div id="scoreboard">
-            <p>Score: <span id="score">0</span></p>
+        <div id="schedule-container">
+            <div id="calendar">
+                <h2>Weekly Schedule</h2>
+                <div id="calendar-header">
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                    <span>Sun</span>
+                </div>
+                <div id="calendar-body">
+                    <!-- Days will be filled with available shift slots -->
+                </div>
+            </div>
+
+            <div id="employee-section">
+                <h2>Assign Employees</h2>
+                <form id="assign-shift-form">
+                    <label for="employee-name">Employee Name</label>
+                    <input type="text" id="employee-name" placeholder="Enter employee name" required>
+                    
+                    <label for="shift-day">Day</label>
+                    <select id="shift-day" required>
+                        <option value="Mon">Monday</option>
+                        <option value="Tue">Tuesday</option>
+                        <option value="Wed">Wednesday</option>
+                        <option value="Thu">Thursday</option>
+                        <option value="Fri">Friday</option>
+                        <option value="Sat">Saturday</option>
+                        <option value="Sun">Sunday</option>
+                    </select>
+
+                    <label for="shift-time">Shift Time</label>
+                    <select id="shift-time" required>
+                        <option value="9am - 5pm">9 AM - 5 PM</option>
+                        <option value="5pm - 9pm">5 PM - 9 PM</option>
+                        <option value="9pm - 1am">9 PM - 1 AM</option>
+                    </select>
+
+                    <button type="submit">Assign Shift</button>
+                </form>
+            </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Simple Game Studio</p>
+        <p>&copy; 2025 Employee Scheduling System</p>
     </footer>
 
-    <script src="game.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
