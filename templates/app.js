@@ -1,11 +1,22 @@
 // app.js
 
-// Array to store shift assignments
-let shifts = {};
+// Function to load shifts from localStorage
+function loadShifts() {
+    const storedShifts = localStorage.getItem('shifts');
+    return storedShifts ? JSON.parse(storedShifts) : {};
+}
+
+// Function to save shifts to localStorage
+function saveShifts(shifts) {
+    localStorage.setItem('shifts', JSON.stringify(shifts));
+}
 
 // Calendar structure: Mon-Sun
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const calendarBody = document.getElementById('calendar-body');
+
+// Initialize shifts from localStorage
+let shifts = loadShifts();
 
 // Function to render calendar days
 function renderCalendar() {
@@ -43,6 +54,9 @@ assignShiftForm.addEventListener('submit', function (e) {
     }
 
     shifts[shiftDay].push({ name: employeeName, time: shiftTime });
+
+    // Save the updated shifts to localStorage
+    saveShifts(shifts);
 
     // Clear the form inputs
     assignShiftForm.reset();
