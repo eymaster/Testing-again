@@ -6,6 +6,118 @@
     <title>Dashboard Homepage</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2f4f4f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sidebar .logo h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.sidebar .nav-links {
+    list-style-type: none;
+}
+
+.sidebar .nav-links li {
+    margin: 20px 0;
+}
+
+.sidebar .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+}
+
+.sidebar .nav-links a:hover {
+    background-color: #1f3b3b;
+    padding-left: 10px;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 28px;
+    color: #333;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info span {
+    margin-right: 15px;
+    font-size: 18px;
+    color: #555;
+}
+
+.profile-btn {
+    background-color: #2f4f4f;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.profile-btn:hover {
+    background-color: #1f3b3b;
+}
+
+.dashboard-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+}
+</style>
 <body>
     <div class="sidebar">
         <div class="logo">
